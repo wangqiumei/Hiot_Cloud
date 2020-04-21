@@ -9,12 +9,16 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.huatec.hiot_cloud.R;
+import com.huatec.hiot_cloud.base.BaseActivity;
 import com.huatec.hiot_cloud.test.mvptest.model.User;
 
-public class TestMVPActivity extends AppCompatActivity implements TestView{
+public class TestMVPActivity extends BaseActivity<TestView, TestPresenter> implements TestView{
 
+    private TestPresenter presenter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        presenter = new TestPresenter();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_mvp);
 
@@ -22,7 +26,6 @@ public class TestMVPActivity extends AppCompatActivity implements TestView{
         final EditText etPassword = findViewById(R.id.et_password);
         Button btnLogin = findViewById(R.id.btn_login);
         final User user = new User();
-        final TestPresenter presenter = new TestPresenter(this);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,6 +36,11 @@ public class TestMVPActivity extends AppCompatActivity implements TestView{
 //                login(user);
             }
         });
+    }
+
+    @Override
+    public TestPresenter createPresenter() {
+        return presenter;
     }
 
     @Override
