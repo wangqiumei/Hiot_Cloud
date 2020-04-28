@@ -18,5 +18,6 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:gravity">center</item>
         <item name="android:drawablePadding">2dp</item>
+
     </style>
 </resources>
