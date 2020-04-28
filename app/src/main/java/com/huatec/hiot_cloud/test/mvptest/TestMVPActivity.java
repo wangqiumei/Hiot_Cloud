@@ -7,7 +7,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.huatec.hiot_cloud.R;
-import com.huatec.hiot_cloud.base.BaseActivity;
+import com.huatec.hiot_cloud.ui.base.BaseActivity;
 import com.huatec.hiot_cloud.test.mvptest.model.User;
 
 import javax.inject.Inject;
@@ -38,6 +38,8 @@ public class TestMVPActivity extends BaseActivity<TestView, TestPresenter> imple
 
             }
         });
+
+
     }
 
     @Override
