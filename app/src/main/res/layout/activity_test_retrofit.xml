@@ -5,40 +5,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".test.networktest.TestOkHttpActivity">
+    tools:context=".test.networktest.TestRetrofitActivity">
 
     <Button
-        android:id="@+id/btn_okhttp_execute"
-        android:text="execute"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/btn_okhttp_enqueue"
+        android:id="@+id/btn_retrofit_enqueue"
         android:text="enqueue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/btn_okhttp_login"
+        android:id="@+id/btn_retrofit_login"
         android:text="登录"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <Button
-        android:id="@+id/btn_okhttp_userinfo"
+        android:id="@+id/btn_retrofit_login2"
+        android:text="登录2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_retrofit_userinfo"
         android:text="用户信息"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button
-        android:id="@+id/btn_okhttp_update_email"
+        android:id="@+id/btn_retrofit_update_email"
         android:text="修改邮箱"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/btn_retrofit"
-        android:text="retrofit"
+        android:id="@+id/btn_retrofit_register"
+        android:text="注册"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
 </LinearLayout>

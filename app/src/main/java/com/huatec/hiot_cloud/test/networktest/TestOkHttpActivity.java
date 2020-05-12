@@ -1,5 +1,6 @@
 package com.huatec.hiot_cloud.test.networktest;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -33,6 +34,8 @@ public class TestOkHttpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_ok_http);
+
+
 
         //execute方法测试类
         Button btnExecute = findViewById(R.id.btn_okhttp_execute);
@@ -80,6 +83,16 @@ public class TestOkHttpActivity extends AppCompatActivity {
             public void onClick(View view) {
                 updateEmail("authorization", "email");
 
+            }
+        });
+
+        //切换到retrofit界面
+        Button btnRetrofit = findViewById(R.id.btn_retrofit);
+        btnRetrofit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TestOkHttpActivity.this , TestRetrofitActivity.class);
+                startActivity(intent);
             }
         });
     }
