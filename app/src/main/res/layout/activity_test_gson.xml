@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".test.networktest.TestGsonActivity">
+
+    <Button
+        android:id="@+id/btn_to_json"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="对象转Json" />
+
+    <Button
+        android:id="@+id/btn_from_json"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Json转对象" />
+
+    <Button
+        android:id="@+id/btn_gson_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Json转列表" />
+
+    <Button
+        android:id="@+id/btn_gson_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Json转Map" />
+
+    <Button
+        android:id="@+id/btn_gson_nest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Json转嵌套对象" />
+
+</LinearLayout>

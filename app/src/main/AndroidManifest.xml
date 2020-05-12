@@ -15,15 +15,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".test.networktest.TestRetrofitActivity"></activity>
-        <activity android:name=".test.networktest.TestOkHttpActivity">
+        <activity android:name=".test.networktest.TestGsonActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SplashActivity"></activity>
+        <activity android:name=".test.networktest.TestRetrofitActivity" />
+        <activity android:name=".test.networktest.TestOkHttpActivity">
+        </activity>
+        <activity android:name=".SplashActivity" />
         <activity android:name=".test.lifecycletest.TestLifeCycleActivity" />
         <activity android:name=".test.mvptest.TestMVPActivity" />
         <activity
@@ -31,7 +33,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustUnspecified|stateHidden"></activity>
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
     </application>
 
 </manifest>
