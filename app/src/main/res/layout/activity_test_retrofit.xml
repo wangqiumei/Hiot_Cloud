@@ -25,6 +25,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <EditText
+        android:id="@+id/et_token_retrofit"
+        android:hint="用户token"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <Button
         android:id="@+id/btn_retrofit_userinfo"
         android:text="用户信息"
