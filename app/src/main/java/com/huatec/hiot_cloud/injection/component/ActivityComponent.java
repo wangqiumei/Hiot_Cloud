@@ -20,6 +20,7 @@ import com.huatec.hiot_cloud.MainActivity;
 import com.huatec.hiot_cloud.injection.PerActivity;
 import com.huatec.hiot_cloud.injection.module.ActivityModule;
 import com.huatec.hiot_cloud.test.mvptest.TestMVPActivity;
+import com.huatec.hiot_cloud.test.networktest.TestNetworkPackActivity;
 
 import dagger.Component;
 
@@ -36,6 +37,8 @@ public interface ActivityComponent {
     void inject(MainActivity mainActivity);
 
     void inject(TestMVPActivity testMVPActivity);
+
+    void inject(TestNetworkPackActivity activity);
     @Component.Builder
     interface ActivityComponentBuilder {
 

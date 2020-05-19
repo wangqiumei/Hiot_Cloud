@@ -30,4 +30,13 @@ public class Constans {
      */
     public static final int MAIN_VIEWPAGER_INDEX_SCENE = 3;
 
+    /**
+     * APP登录的loginCode
+     */
+    public static final String LOGIN_CODE_APP = "app";
+
+    /**
+     * APP的注册用户类型
+     */
+    public static final String REGISTER_TYPE_NOMAL = "1";
 }
