@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.huatec.hiot_cloud.R;
 import com.huatec.hiot_cloud.utils.ImageUtils;
 
@@ -27,12 +28,13 @@ public class TestGlideActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Glide.with(TestGlideActivity.this)
 //                        .load(url)
-                        .asBitmap()
+//                        .asBitmap()
                         .load("http://p1.pstatp.com/large/166200019850062839d3")
                         .placeholder(R.drawable.loading)
                         .error(R.drawable.error)
-//使用asBitmap时不用     .transition(new DrawableTransitionOptions().crossFade())
-//                        .transition(new DrawableTransitionOptions().crossFade(1000))
+                        //使用asBitmap时不用
+                        .transition(new DrawableTransitionOptions().crossFade(1000))
+                        .centerCrop()
                         .into(iv);
 
             }
