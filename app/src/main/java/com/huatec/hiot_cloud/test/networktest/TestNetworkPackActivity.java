@@ -44,7 +44,7 @@ public class TestNetworkPackActivity extends BaseActivity implements TestNetwork
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                presenter.login("wangqiumei123", "abc123456");
+                presenter.login("test1", "abc123456");
 //                login("wangqiumei123", "abc123456");
             }
         });
@@ -61,7 +61,7 @@ public class TestNetworkPackActivity extends BaseActivity implements TestNetwork
         btnUpdateEmail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                presenter.updateEmail(etToken.getText().toString(), "wangqiuemi000@qq.com");
+                presenter.updateEmail(etToken.getText().toString(), "test2@qq.com");
             }
         });
         //注册
@@ -69,7 +69,7 @@ public class TestNetworkPackActivity extends BaseActivity implements TestNetwork
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                presenter.register("test", "abc123456789", "test@qq.com");
+                presenter.register("test1", "abc123456", "test1@qq.com");
             }
         });
     }

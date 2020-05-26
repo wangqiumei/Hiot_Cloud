@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingLeft="15dp"
+    android:paddingTop="56dp"
+    android:paddingRight="15dp">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/huatec_logo" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/tiptet_user_name"
+        android:hint="@string/hint_userName"
+        android:drawableLeft="@drawable/icon_user"
+        style="@style/loginEditTextStyle" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/tiptet_email"
+        android:hint="@string/hint_email"
+        android:drawableLeft="@drawable/icon_email"
+        style="@style/loginEditTextStyle" />
+
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/tiptet_password"
+        android:hint="@string/hint_password"
+        android:drawableLeft="@drawable/icon_password"
+        android:inputType="textPassword"
+        style="@style/loginEditTextStyle" />
+
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/login_button_bg"
+        android:text="注册"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/tv_link_signup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:text="@string/login_direct"
+        android:textColor="#05eeff"
+        android:textSize="16sp" />
+
+</LinearLayout>

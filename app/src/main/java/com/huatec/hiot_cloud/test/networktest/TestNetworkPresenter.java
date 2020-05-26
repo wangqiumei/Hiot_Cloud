@@ -19,7 +19,7 @@ public class TestNetworkPresenter extends BasePresenter<TestNetworkPackView> {
     }
 
     public void login(String userName, String password) {
-        subscrib(dataManager.login(userName, password), new RequestCallback<ResultBase<LoginResultDTO>>() {
+        subscribe(dataManager.login(userName, password), new RequestCallback<ResultBase<LoginResultDTO>>() {
             @Override
             public void onNext(ResultBase<LoginResultDTO> resultBase) {
                 if (resultBase != null && resultBase.getData() != null) {
@@ -38,7 +38,7 @@ public class TestNetworkPresenter extends BasePresenter<TestNetworkPackView> {
      * @param authorization
      */
     public void getUserInfo(Editable text, String authorization){
-        subscrib(dataManager.getUserInfo(authorization), new RequestCallback<ResultBase<UserBean>>() {
+        subscribe(dataManager.getUserInfo(authorization), new RequestCallback<ResultBase<UserBean>>() {
             @Override
             public void onNext(ResultBase<UserBean> resultBase) {
                 if (resultBase != null && resultBase.getData() != null) {
@@ -60,7 +60,7 @@ public class TestNetworkPresenter extends BasePresenter<TestNetworkPackView> {
      * @param email
      */
     public void updateEmail(String authorization, String email){
-        subscrib(dataManager.updateEmail(authorization, email), new RequestCallback<ResultBase<String>>() {
+        subscribe(dataManager.updateEmail(authorization, email), new RequestCallback<ResultBase<String>>() {
             @Override
             public void onNext(ResultBase<String> resultBase) {
 
@@ -82,7 +82,7 @@ public class TestNetworkPresenter extends BasePresenter<TestNetworkPackView> {
      * @param email
      */
     public void register(String userName, String password, String email){
-        subscrib(dataManager.register(userName, password, email), new RequestCallback<ResultBase<UserBean>>() {
+        subscribe(dataManager.register(userName, password, email), new RequestCallback<ResultBase<UserBean>>() {
             @Override
             public void onNext(ResultBase<UserBean> resultBase) {
 

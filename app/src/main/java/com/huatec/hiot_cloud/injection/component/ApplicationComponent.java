@@ -5,6 +5,7 @@ import android.content.Context;
 
 import com.huatec.hiot_cloud.App;
 import com.huatec.hiot_cloud.data.DataManager;
+import com.huatec.hiot_cloud.data.SharedPreferencesHelper;
 import com.huatec.hiot_cloud.injection.ApplicationContext;
 import com.huatec.hiot_cloud.injection.module.ApplicationModule;
 
@@ -27,6 +28,8 @@ public interface ApplicationComponent {
     Application application();
 
     DataManager dataManager();
+
+    SharedPreferencesHelper sharedPreferencesHelper();
 
     @Component.Builder
     interface ApplicationModuleBuilder {
