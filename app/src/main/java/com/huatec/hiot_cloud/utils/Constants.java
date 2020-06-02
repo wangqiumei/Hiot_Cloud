@@ -43,7 +43,7 @@ public class Constants {
     /**
      * 服务端返回信息状态属性成功
      */
-    public static final int MSG_STATUS_SECCESS = 1;
+    public static final int MSG_STATUS_SUCCESS = 1;
 
     /**
      * 网络请求失败吐司
@@ -94,4 +94,16 @@ public class Constants {
      * 正在登录...
      */
     public static final String LOGINING = "正在登录...";
+    /**
+     * onError失败吐司
+     */
+    public static final String ERROR_MESSAGE = "服务器开小差，请稍后再试";
+    /**
+     * form-data类
+     */
+    public static final String MULTIPART_FORM_DATA = "multipart/form-data";
+    /**
+     * 如果token失效
+     */
+    public static final int MSG_STATUS_TOKEN_OUT = -100;
 }

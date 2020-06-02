@@ -37,4 +37,16 @@
         <item name="android:textColorHint">#999999</item>
         <item name="android:textSize">16sp</item>
     </style>
+
+    <!--用户中心界面文本框属性-->
+    <style name="UserCenterTextStyle">
+        <item name="android:drawableRight">@drawable/icon_rightarrow</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:textColor">#999999</item>
+        <item name="android:textSize">20sp</item>
+    </style>
 </resources>

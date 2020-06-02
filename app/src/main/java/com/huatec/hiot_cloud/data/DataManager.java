@@ -5,9 +5,15 @@ import com.huatec.hiot_cloud.test.networktest.ResultBase;
 import com.huatec.hiot_cloud.test.networktest.UserBean;
 import com.huatec.hiot_cloud.utils.Constants;
 
+import java.io.File;
+
 import javax.inject.Inject;
 
+import io.reactivex.Observable;
 import io.reactivex.functions.Consumer;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 
 /**
  * 网络请求封装类
@@ -35,7 +41,7 @@ public class DataManager {
                 .doOnNext(new Consumer<ResultBase<LoginResultDTO>>() {
                     @Override
                     public void accept(ResultBase<LoginResultDTO> resultBase) throws Exception {
-                        if (resultBase.getStatus() == Constants.MSG_STATUS_SECCESS) {
+                        if (resultBase.getStatus() == Constants.MSG_STATUS_SUCCESS) {
                             if (resultBase != null && resultBase.getData() != null) {
                                 sharedPreferencesHelper.setUserToken(resultBase.getData().getTokenValue());
                             }
@@ -47,25 +53,24 @@ public class DataManager {
     /**
      * 获取用户信息
      *
-     * @param authorization
+     * @param
      * @return
      */
 
-    public io.reactivex.Observable<ResultBase<UserBean>> getUserInfo(String authorization) {
-        return service.getUserInfo(authorization);
+    public io.reactivex.Observable<ResultBase<UserBean>> getUserInfo() {
+        return service.getUserInfo(sharedPreferencesHelper.getUserToken());
     }
 
 
     /**
      * 修改邮箱
      *
-     * @param authorization
      * @param email
      * @return
      */
 
-    public io.reactivex.Observable<ResultBase<String>> updateEmail( String authorization,String email) {
-        return service.updateEmail(authorization, email);
+    public io.reactivex.Observable<ResultBase<String>> updateEmail(String email) {
+        return service.updateEmail(sharedPreferencesHelper.getUserToken(), email);
     }
 
     /**
@@ -84,6 +89,31 @@ public class DataManager {
         userBean.setEmail(email);
         userBean.setUserType(Constants.REGISTER_TYPE_NOMAL);
         return service.register(userBean);
+    }
+
+    /**
+     * 上传图片
+     *
+     * @param filePath
+     */
+    public Observable<ResultBase<String>> uploadImage(String filePath) {
+        File file = new File(filePath);
+        RequestBody requestBody = RequestBody.create(MediaType.parse(Constants.MULTIPART_FORM_DATA), file);
+        MultipartBody.Part multipartFile = MultipartBody.Part.createFormData("file", file.getName(), requestBody);
+        return service.uploadImage(multipartFile, sharedPreferencesHelper.getUserToken());
+    }
+
+    /**
+     * 注销
+     */
+    public Observable<ResultBase> logout() {
+        return service.logout(sharedPreferencesHelper.getUserToken())
+                .doOnNext(new Consumer<ResultBase>() {
+                    @Override
+                    public void accept(ResultBase resultBase) throws Exception {
+                        sharedPreferencesHelper.setUserToken("");
+                    }
+                });
     }
 
 

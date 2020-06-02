@@ -33,7 +33,7 @@ class LoginPresenter extends BasePresenter<LoginView> {
         subscribe(dataManager.login(email, password), new RequestCallback<ResultBase<LoginResultDTO>>() {
             @Override
             public void onNext(ResultBase<LoginResultDTO> resultBase) {
-                if (resultBase.getStatus() == Constants.MSG_STATUS_SECCESS) {
+                if (resultBase.getStatus() == Constants.MSG_STATUS_SUCCESS) {
                     //如果登陆身份正确
                     if (resultBase != null && resultBase.getData() != null) {
                         //弹出登录成功

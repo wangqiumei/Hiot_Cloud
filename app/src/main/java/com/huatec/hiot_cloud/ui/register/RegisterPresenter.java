@@ -31,7 +31,7 @@ class RegisterPresenter extends BasePresenter<RegisterView> {
         subscribe(dataManager.register(userName, password, email), new RequestCallback<ResultBase<UserBean>>() {
             @Override
             public void onNext(ResultBase<UserBean> resultBase) {
-                if (resultBase.getStatus() == Constants.MSG_STATUS_SECCESS) {
+                if (resultBase.getStatus() == Constants.MSG_STATUS_SUCCESS) {
                     //判断如果注册成功，吐司注册成功
                     if (resultBase != null && resultBase.getData() != null) {
                         //弹出注册成功
@@ -66,7 +66,7 @@ class RegisterPresenter extends BasePresenter<RegisterView> {
         subscribe(dataManager.login(email, password), new RequestCallback<ResultBase<LoginResultDTO>>() {
             @Override
             public void onNext(ResultBase<LoginResultDTO> resultBase) {
-                if (resultBase.getStatus() == Constants.MSG_STATUS_SECCESS) {
+                if (resultBase.getStatus() == Constants.MSG_STATUS_SUCCESS) {
                     //如果登陆身份正确，弹出登录成功，跳转到主界面
                     if (resultBase != null && resultBase.getData() != null) {
                         //弹出登录成功

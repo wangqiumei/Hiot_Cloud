@@ -2,6 +2,7 @@ package com.huatec.hiot_cloud.ui.base;
 
 import android.util.Log;
 
+import com.huatec.hiot_cloud.utils.Constants;
 import com.huatec.hiot_cloud.utils.LoadingUtil;
 
 import io.reactivex.Observable;
@@ -82,6 +83,7 @@ public class BasePresenter<V extends BaseView> {
             //对话框隐藏
             LoadingUtil.hideLoading();
             Log.e(TAG, "onError: ",e );
+            getView().showMessage(Constants.ERROR_MESSAGE);
         }
 
 

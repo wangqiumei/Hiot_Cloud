@@ -38,7 +38,7 @@ public class TestNetworkPresenter extends BasePresenter<TestNetworkPackView> {
      * @param authorization
      */
     public void getUserInfo(Editable text, String authorization){
-        subscribe(dataManager.getUserInfo(authorization), new RequestCallback<ResultBase<UserBean>>() {
+        subscribe(dataManager.getUserInfo(), new RequestCallback<ResultBase<UserBean>>() {
             @Override
             public void onNext(ResultBase<UserBean> resultBase) {
                 if (resultBase != null && resultBase.getData() != null) {
@@ -60,7 +60,7 @@ public class TestNetworkPresenter extends BasePresenter<TestNetworkPackView> {
      * @param email
      */
     public void updateEmail(String authorization, String email){
-        subscribe(dataManager.updateEmail(authorization, email), new RequestCallback<ResultBase<String>>() {
+        subscribe(dataManager.updateEmail(email), new RequestCallback<ResultBase<String>>() {
             @Override
             public void onNext(ResultBase<String> resultBase) {
 
