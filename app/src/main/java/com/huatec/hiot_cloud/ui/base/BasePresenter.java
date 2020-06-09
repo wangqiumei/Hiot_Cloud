@@ -2,6 +2,7 @@ package com.huatec.hiot_cloud.ui.base;
 
 import android.util.Log;
 
+import com.huatec.hiot_cloud.test.networktest.ResultBase;
 import com.huatec.hiot_cloud.utils.Constants;
 import com.huatec.hiot_cloud.utils.LoadingUtil;
 
@@ -76,7 +77,22 @@ public class BasePresenter<V extends BaseView> {
         }
 
 
-        public abstract void onNext(T t);
+        public void onNext(T t) {
+            ResultBase resultBase = (ResultBase) t;
+            if (resultBase == null) {
+                getView().showMessage(Constants.ERROR_MESSAGE);
+                return;
+            }
+            //如果token失效
+            if (resultBase.getStatus() == Constants.MSG_STATUS_TOKEN_OUT) {
+                getView().tokenOut();
+                return;
+            }
+            if (resultBase.getStatus() != Constants.MSG_STATUS_SUCCESS) {
+                getView().showMessage(resultBase.getMsg());
+                return;
+            }
+        }
 
 
         public void onError(Throwable e) {
