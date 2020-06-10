@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.huatec.hiot_cloud.ui.devicelist.DevicelistFragment;
 import com.huatec.hiot_cloud.ui.mine.MineFragment;
 import com.huatec.hiot_cloud.utils.Constants;
 
@@ -26,7 +27,7 @@ public class MainViewPagerAdapter extends FragmentPagerAdapter {
                 break;
             case Constants.MAIN_VIEWPAGER_INDEX_EQUIPMENT:
                 //创建设备Fragment
-                fragment = EquipmentFragment.newInstance();
+                fragment = DevicelistFragment.newInstance();
                 break;
             case Constants.MAIN_VIEWPAGER_INDEX_MINE:
                 //创建我的Fragment

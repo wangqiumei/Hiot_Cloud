@@ -106,4 +106,13 @@ public class Constants {
      * 如果token失效
      */
     public static final int MSG_STATUS_TOKEN_OUT = -100;
+    public static final String BIND_SUCCESS = "绑定成功";
+    /**
+     * 设备已绑定状态
+     */
+    public static final int DEVICE_STATUS_BINDED = 1;
+    /**
+     * 设备未绑定状态
+     */
+    public static final int DEVICE_STATUS_UNBINDED = 0;
 }

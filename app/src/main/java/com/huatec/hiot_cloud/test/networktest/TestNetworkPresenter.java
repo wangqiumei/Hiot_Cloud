@@ -4,6 +4,7 @@ import android.text.Editable;
 import android.text.TextUtils;
 
 import com.huatec.hiot_cloud.data.DataManager;
+import com.huatec.hiot_cloud.data.bean.UserBean;
 import com.huatec.hiot_cloud.ui.base.BasePresenter;
 
 import javax.inject.Inject;

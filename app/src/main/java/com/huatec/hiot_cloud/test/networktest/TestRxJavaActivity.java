@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.huatec.hiot_cloud.R;
 import com.huatec.hiot_cloud.data.NetworkService;
+import com.huatec.hiot_cloud.data.bean.UserBean;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;

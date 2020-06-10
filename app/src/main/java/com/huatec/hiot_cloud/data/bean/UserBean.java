@@ -1,4 +1,4 @@
-package com.huatec.hiot_cloud.test.networktest;
+package com.huatec.hiot_cloud.data.bean;
 
 import java.io.Serializable;
 

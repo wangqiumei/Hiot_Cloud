@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.huatec.hiot_cloud.R;
+import com.huatec.hiot_cloud.data.bean.UserBean;
 
 import java.io.IOException;
 import java.lang.reflect.Type;

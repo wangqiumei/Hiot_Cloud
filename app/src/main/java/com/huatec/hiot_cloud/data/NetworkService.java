@@ -1,8 +1,11 @@
 package com.huatec.hiot_cloud.data;
 
+import com.huatec.hiot_cloud.data.bean.DeviceBean;
+import com.huatec.hiot_cloud.data.bean.UserBean;
 import com.huatec.hiot_cloud.test.networktest.LoginResultDTO;
 import com.huatec.hiot_cloud.test.networktest.ResultBase;
-import com.huatec.hiot_cloud.test.networktest.UserBean;
+
+import java.util.List;
 
 import io.reactivex.Observable;
 import okhttp3.MultipartBody;
@@ -13,6 +16,7 @@ import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Part;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
@@ -90,4 +94,20 @@ public interface NetworkService {
     @Multipart
     Observable<ResultBase<String>> uploadImage(@Part MultipartBody.Part file,
                                                @Header("Authorization") String authorization);
+
+    /**
+     * 绑定设备
+     *
+     * @param device_pk
+     * @param authorization
+     * @return
+     */
+    @POST("/holder/device/{device_pk} ")
+    Observable<ResultBase> bindDevice(@Path("device_pk") String device_pk,
+                                      @Header("Authorization") String authorization);
+
+    @GET("/holder/user")
+    Observable<ResultBase<List<DeviceBean>>> ListBindedDevice(@Query("bonding") int bonding,
+                                                              @Header("Authorization") String authorization);
+
 }

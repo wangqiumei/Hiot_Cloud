@@ -1,5 +1,7 @@
 package com.huatec.hiot_cloud.test.networktest;
 
+import com.huatec.hiot_cloud.data.bean.UserBean;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;

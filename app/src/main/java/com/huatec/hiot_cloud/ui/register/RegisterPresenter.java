@@ -3,9 +3,9 @@ package com.huatec.hiot_cloud.ui.register;
 import android.text.TextUtils;
 
 import com.huatec.hiot_cloud.data.DataManager;
+import com.huatec.hiot_cloud.data.bean.UserBean;
 import com.huatec.hiot_cloud.test.networktest.LoginResultDTO;
 import com.huatec.hiot_cloud.test.networktest.ResultBase;
-import com.huatec.hiot_cloud.test.networktest.UserBean;
 import com.huatec.hiot_cloud.ui.base.BasePresenter;
 import com.huatec.hiot_cloud.utils.Constants;
 

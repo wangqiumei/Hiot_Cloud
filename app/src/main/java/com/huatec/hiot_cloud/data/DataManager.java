@@ -1,11 +1,13 @@
 package com.huatec.hiot_cloud.data;
 
+import com.huatec.hiot_cloud.data.bean.DeviceBean;
+import com.huatec.hiot_cloud.data.bean.UserBean;
 import com.huatec.hiot_cloud.test.networktest.LoginResultDTO;
 import com.huatec.hiot_cloud.test.networktest.ResultBase;
-import com.huatec.hiot_cloud.test.networktest.UserBean;
 import com.huatec.hiot_cloud.utils.Constants;
 
 import java.io.File;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -114,6 +116,26 @@ public class DataManager {
                         sharedPreferencesHelper.setUserToken("");
                     }
                 });
+    }
+
+    /**
+     * 设备绑定
+     *
+     * @param deviceId
+     * @return
+     */
+    public Observable<ResultBase> bindDevice(String deviceId) {
+        return service.bindDevice(deviceId, sharedPreferencesHelper.getUserToken());
+    }
+
+    /**
+     * 获取指定绑定状态的设备类别
+     *
+     * @param bonding
+     * @return
+     */
+    public Observable<ResultBase<List<DeviceBean>>> ListBindedDevice(int bonding) {
+        return service.ListBindedDevice(bonding, sharedPreferencesHelper.getUserToken());
     }
 
 
