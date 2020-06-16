@@ -75,62 +75,8 @@ public class TestRxJavaActivity extends AppCompatActivity {
             }
         });
 
-        //修改密码
-        Button btnUpdatePassword = findViewById(R.id.btn_rxjava_update_password);
-        btnUpdatePassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                updatePassword("a2b91575aa744e74bea5929ade6a155c_138c2bb5fd4c41318eb78670d82ab577_use", "abc123456", "abc123", "abc123");
-            }
-        });
     }
 
-
-
-    /**
-     * 修改密码
-     *
-     * @param authorization
-     * @param oldpassword
-     * @param newpassword
-     * @param confirmpassword
-     */
-    private void updatePassword(String authorization, String oldpassword, String newpassword, String confirmpassword) {
-        Observable<ResultBase<UserBean>> observable = service.updatePassword(authorization, oldpassword, newpassword, confirmpassword);
-        observable.observeOn(AndroidSchedulers.mainThread())
-                .observeOn(Schedulers.io())
-                .subscribe(new Observer<ResultBase<UserBean>>() {
-                    @Override
-                    public void onSubscribe(Disposable d) {
-
-                    }
-
-                    @Override
-                    public void onNext(ResultBase<UserBean> resultBase) {
-                        if (resultBase != null && resultBase.getData() != null) {
-                            UserBean userBean = resultBase.getData();
-                            String str = String.format("旧密码：%s,新密码：%s,确认密码：%s",
-                                    userBean.getOldpassword(), userBean.getNewpassword(), userBean.getConfirmpassword());
-                            Toast.makeText(TestRxJavaActivity.this, str, Toast.LENGTH_SHORT).show();
-                        }
-                        Log.d(TAG, resultBase.getMsg());
-                        if (resultBase != null && !TextUtils.isEmpty(resultBase.getMsg())) {
-                            Toast.makeText(TestRxJavaActivity.this, resultBase.getMsg(), Toast.LENGTH_SHORT).show();
-                        }
-
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-
-                    }
-
-                    @Override
-                    public void onComplete() {
-
-                    }
-                });
-    }
 
 
     /**

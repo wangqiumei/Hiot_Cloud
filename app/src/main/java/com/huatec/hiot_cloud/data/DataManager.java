@@ -1,6 +1,7 @@
 package com.huatec.hiot_cloud.data;
 
 import com.huatec.hiot_cloud.data.bean.DeviceBean;
+import com.huatec.hiot_cloud.data.bean.DeviceDetailBean;
 import com.huatec.hiot_cloud.data.bean.UserBean;
 import com.huatec.hiot_cloud.test.networktest.LoginResultDTO;
 import com.huatec.hiot_cloud.test.networktest.ResultBase;
@@ -76,6 +77,19 @@ public class DataManager {
     }
 
     /**
+     * 修改密码
+     *
+     * @param oldpassword
+     * @param newpassword
+     * @param confirmpassword
+     * @return
+     */
+    public Observable<ResultBase<String>> updatePassword(String oldpassword, String newpassword, String confirmpassword) {
+        return service.updatePassword(oldpassword, newpassword, confirmpassword, sharedPreferencesHelper.getUserToken());
+    }
+
+
+    /**
      *注册
      * @param username  用户名
      * @param password  密码
@@ -137,6 +151,28 @@ public class DataManager {
     public Observable<ResultBase<List<DeviceBean>>> ListBindedDevice(int bonding) {
         return service.ListBindedDevice(bonding, sharedPreferencesHelper.getUserToken());
     }
+
+    /**
+     * 获取设备详情
+     *
+     * @param deviceId
+     * @return
+     */
+    public Observable<ResultBase<DeviceDetailBean>> getDeviceDetail(String deviceId) {
+        return service.getDeviceDetail(deviceId, sharedPreferencesHelper.getUserToken());
+    }
+
+    /**
+     * 控制开关通道状态
+     *
+     * @param dataStreamId
+     * @param status
+     * @return
+     */
+    public Observable<ResultBase> changeSwitch(String dataStreamId, int status) {
+        return service.changeSwitch(dataStreamId, status, sharedPreferencesHelper.getUserToken());
+    }
+
 
 
 }

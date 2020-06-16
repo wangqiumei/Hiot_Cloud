@@ -20,6 +20,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         tools:replace="android:theme">
+        <activity android:name=".ui.devicedetail.DeviceDetailActivity"></activity>
+        <activity android:name=".ui.updatepassword.PasswordUpdateActivity" />
+        <activity android:name=".ui.updateemail.EmailUpdateActivity" />
         <activity android:name=".ui.scan.ScanActivity"></activity>
         <activity android:name=".ui.register.RegisterActivity" />
         <activity android:name=".ui.login.LoginActivity"></activity>

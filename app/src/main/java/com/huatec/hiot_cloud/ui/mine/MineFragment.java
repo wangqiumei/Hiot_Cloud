@@ -19,6 +19,8 @@ import com.huatec.hiot_cloud.data.bean.UserBean;
 import com.huatec.hiot_cloud.ui.base.BaseActivity;
 import com.huatec.hiot_cloud.ui.base.BaseFragment;
 import com.huatec.hiot_cloud.ui.login.LoginActivity;
+import com.huatec.hiot_cloud.ui.updateemail.EmailUpdateActivity;
+import com.huatec.hiot_cloud.ui.updatepassword.PasswordUpdateActivity;
 import com.huatec.hiot_cloud.utils.ImageUtils;
 import com.luck.picture.lib.PictureSelector;
 import com.luck.picture.lib.config.PictureConfig;
@@ -136,6 +138,20 @@ public class MineFragment extends BaseFragment<MineView, MinePresenter> implemen
                         showMessage("用户拒绝授权");
                     }
                 });
+    }
+
+    /**
+     * 修改密码
+     */
+    private void updatePassword() {
+        startActivity(PasswordUpdateActivity.class);
+    }
+
+    /**
+     * 修改邮箱
+     */
+    private void updateEmail() {
+        startActivity(EmailUpdateActivity.class);
     }
 
     /**
