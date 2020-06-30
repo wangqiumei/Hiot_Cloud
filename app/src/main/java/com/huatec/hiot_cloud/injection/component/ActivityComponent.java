@@ -22,8 +22,10 @@ import com.huatec.hiot_cloud.injection.PerActivity;
 import com.huatec.hiot_cloud.injection.module.ActivityModule;
 import com.huatec.hiot_cloud.test.mvptest.TestMVPActivity;
 import com.huatec.hiot_cloud.test.networktest.TestNetworkPackActivity;
+import com.huatec.hiot_cloud.ui.datastreamhistory.LineChartActivity;
 import com.huatec.hiot_cloud.ui.devicedetail.DeviceDetailActivity;
 import com.huatec.hiot_cloud.ui.devicelist.DevicelistFragment;
+import com.huatec.hiot_cloud.ui.gpsdatastreamhistory.GpsDataStreamHistoryActivity;
 import com.huatec.hiot_cloud.ui.login.LoginActivity;
 import com.huatec.hiot_cloud.ui.mine.MineFragment;
 import com.huatec.hiot_cloud.ui.register.RegisterActivity;
@@ -66,6 +68,10 @@ public interface ActivityComponent {
     void inject(PasswordUpdateActivity activity);
 
     void inject(DeviceDetailActivity activity);
+
+    void inject(LineChartActivity activity);
+
+    void inject(GpsDataStreamHistoryActivity activity);
 
     @Component.Builder
     interface ActivityComponentBuilder {

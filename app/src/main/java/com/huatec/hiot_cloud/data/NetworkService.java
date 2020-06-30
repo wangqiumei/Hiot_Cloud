@@ -2,6 +2,8 @@ package com.huatec.hiot_cloud.data;
 
 import com.huatec.hiot_cloud.data.bean.DeviceBean;
 import com.huatec.hiot_cloud.data.bean.DeviceDetailBean;
+import com.huatec.hiot_cloud.data.bean.UpDataStreamGpsBean;
+import com.huatec.hiot_cloud.data.bean.UpDataStreamSwitchBean;
 import com.huatec.hiot_cloud.data.bean.UserBean;
 import com.huatec.hiot_cloud.test.networktest.LoginResultDTO;
 import com.huatec.hiot_cloud.test.networktest.ResultBase;
@@ -127,5 +129,35 @@ public interface NetworkService {
     Observable<ResultBase> changeSwitch(@Path("downdatastream_pk") String dataStreamId,
                                         @Query("status") int status,
                                         @Header("Authorization") String authorization);
+
+    /**
+     * 获取上行通道历史数据
+     *
+     * @param skip
+     * @param limit
+     * @param updatastreamId
+     * @param authorization
+     * @return
+     */
+    @GET("/mongo/download/{updatastreamId}/{skip}/{limit}/List")
+    Observable<ResultBase<List<UpDataStreamSwitchBean>>> getSwitchUpDataStreamHistory(@Path("skip") int skip,
+                                                                                      @Path("limit") int limit,
+                                                                                      @Path("updatastreamId") String updatastreamId,
+                                                                                      @Header("Authorization") String authorization);
+
+    /**
+     * 获取GPS通道历史数据
+     *
+     * @param skip
+     * @param limit
+     * @param updatastreamId
+     * @param authorization
+     * @return
+     */
+    @GET("/mongo/download/{updatastreamId}/{skip}/{limit}/List")
+    Observable<ResultBase<List<UpDataStreamGpsBean>>> getGpsUpDataStreamHistory(@Path("skip") int skip,
+                                                                                @Path("limit") int limit,
+                                                                                @Path("updatastreamId") String updatastreamId,
+                                                                                @Header("Authorization") String authorization);
 
 }

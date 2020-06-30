@@ -10,6 +10,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -89,4 +90,17 @@ dependencies {
 
     // 分包
     implementation 'androidx.multidex:multidex:2.0.0'
+
+    //android开源图表库
+    //https://github.com/PhilJay/MPAndroidChart
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    //高德地图SDK说明：https://lbs.amap.com/api/android-sdk/gettingstarted
+    //3D地图
+    implementation 'com.amap.api:3dmap:6.4.0'
+    //定位功能
+    implementation 'com.amap.api:location:4.2.0'
+    //搜索功能
+    implementation 'com.amap.api:search:6.1.0'
+
 }
